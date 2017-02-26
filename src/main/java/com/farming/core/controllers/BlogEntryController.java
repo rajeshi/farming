@@ -25,7 +25,7 @@ public class BlogEntryController {
 
     @RequestMapping(value = "/{blogEntryId}")
     public ResponseEntity<BlogEntryResource> get(@PathVariable Long blogEntryId) {
-        BlogEntry entry = service.get(blogEntryId);
+        BlogEntry entry = service.getBlogEntry(blogEntryId);
         if (entry == null) {
             return new ResponseEntity(HttpStatus.NOT_FOUND);
         } else {

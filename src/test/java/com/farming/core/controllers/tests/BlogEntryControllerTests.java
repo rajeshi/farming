@@ -1,4 +1,4 @@
-package com.farming.core.tests;
+package com.farming.core.controllers.tests;
 
 import com.farming.core.controllers.BlogEntryController;
 import com.farming.core.models.BlogEntry;
@@ -43,7 +43,7 @@ public class BlogEntryControllerTests {
         entry.setId(1L);
         entry.setTitle("Test Blog Entry");
 
-        when(service.get(1L)).thenReturn(entry);
+        when(service.getBlogEntry(1L)).thenReturn(entry);
 
         mockMvc.perform(get("/rest/blog-entries/1"))
                 .andDo(print())
@@ -55,7 +55,7 @@ public class BlogEntryControllerTests {
     @Test
     public void getNonExistingBlogEntry() throws Exception {
 
-        when(service.get(1L)).thenReturn(null);
+        when(service.getBlogEntry(1L)).thenReturn(null);
 
         mockMvc.perform(get("/rest/blog-entries/1"))
                 .andDo(print())

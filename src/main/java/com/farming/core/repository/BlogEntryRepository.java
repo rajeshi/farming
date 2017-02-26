@@ -1,8 +1,8 @@
-package com.farming.core.services;
+package com.farming.core.repository;
 
 import com.farming.core.models.BlogEntry;
 
-public interface BlogEntryService {
+public interface BlogEntryRepository {
 
     public BlogEntry getBlogEntry(Long id);
 
