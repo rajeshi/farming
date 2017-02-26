@@ -3,3 +3,4 @@ target/
 settings.xml
 nbactions.xml
 *.iml
+nb-configuration.xml
